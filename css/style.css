@@ -39,56 +39,97 @@ header {
     padding: 2.2rem 0;
 }
 
-
-@media screen and (min-width: 1440px) {
-
-
-    
+.title {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    border-bottom: 40px;
 }
 
-@media screen and (max-width: 375px) {
-    .title {
-        color: white;
-        font-size: 1.5rem;
+.text {
+    color: white;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--primary-violet-color);
+    background-color: white;
+    padding: 12px 0;
+    box-shadow: 0px 3px 6px 0px rgba(rgb(0 0 0 / 20%));
+    border-radius: 24px;
+}
+
+.btn:hover{
+    background-color: var(--primary-magenta-color);
+    color: white;
+}
+
+.link-box {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    letter-spacing: 19px;
+    padding: 40px 0px 25px 0px;
+}
+
+footer a {
+    display: inline-block;
+    border: solid 1px white;
+    padding: 3px;
+    border-radius: 22px;
+    margin: auto 0;
+    font-size: 00.8rem;
+}
+
+footer a:hover{
+    background-color: var(--primary-violet-color);
+}
+
+@media screen and (min-width: 1440px) {
+    
+    .container {
+        padding: 3.2rem 3.2rem 0 3.2rem;
+    }
+    
+    .container{
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    header{
+        grid-column-start: 1 ;
+        grid-column-end: 3 ;
+    }
+
+    .container :nth-child(3) * {
+        border: solid 1px rgb(21, 34, 22) ;
+        text-align: left;
+    }
+
+    .container :nth-child(3) {
+        padding: 3.2rem 0;
+    }
+
+
+    .container .btn{
         text-align: center;
-        border-bottom: 40px;
     }
 
-    .text {
-        color: white;
-        font-size: 0.8rem;
-        text-align: center;
-    }
-
-    .btn {
-        display: inline-block;
-        width: 200px;
-        text-align: center;
-        text-decoration: none;
-        color: var(--primary-violet-color);
-        background-color: white;
-        padding: 12px 0;
-        box-shadow: 0px 3px 3px 0px rgba(rgb(0 0 0 / 20%));
-        border-radius: 24px;
-    }
-
-    .link-box {
-        text-align: center;
-    }
-
-    footer {
-        text-align: center;
-        letter-spacing: 19px;
-        padding: 40px 0px 25px 0px;
-    }
-
-    footer a {
-        display: inline-block;
-        border: solid 1px white;
-        padding: 3px;
-        border-radius: 22px;
-        margin: auto 0;
-        font-size: 00.8rem;
+    footer{
+        /* grid-area: social; */
+        grid-column-start: 1;
+        grid-column-end: 3 ;
+        text-align: right;
+        border: solid 1px rgb(189, 108, 4) ;
 
     }
+
+    
 }
