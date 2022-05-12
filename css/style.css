@@ -15,6 +15,8 @@ body {
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
         Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: var(--primary-violet-color);
+    background-image: url(../images/bg-mobile.svg);
+    background-repeat: no-repeat ;
     font-size: 14px;
 }
 
@@ -33,6 +35,8 @@ img {
 
 .container {
     padding: 0 2.2rem;
+    height: 100vh;
+    overflow: hidden;
 }
 
 header {
@@ -43,16 +47,18 @@ header {
     color: white;
     font-size: 1.5rem;
     text-align: center;
-    border-bottom: 40px;
 }
 
 .text {
     color: white;
-    font-size: 0.8rem;
+    font-size: 1.05rem;
     text-align: center;
+    opacity: 0.8;
 }
 
 .btn {
+    font-size: 0.8rem;
+    font-family: "Poppins", sans-serif;
     display: inline-block;
     width: 200px;
     text-align: center;
@@ -74,33 +80,47 @@ header {
 }
 
 footer {
-    text-align: center;
-    letter-spacing: 19px;
-    padding: 40px 0px 25px 0px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
 }
 
 footer a {
-    display: inline-block;
+    display: grid;
+    align-items: center;
+    justify-content: center;
     border: solid 1px white;
-    padding: 3px;
-    border-radius: 22px;
-    margin: auto 0;
-    font-size: 00.8rem;
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
 }
 
 footer a:hover{
-    background-color: var(--primary-violet-color);
+    border: solid 1px var(--primary-magenta-color);    
 }
 
-@media screen and (min-width: 1440px) {
-    
-    .container {
-        padding: 3.2rem 3.2rem 0 3.2rem;
-    }
-    
+a svg{
+    display: grid;
+    align-items: center;
+    font-size: 0.5rem;
+}
+
+a:hover, svg:hover path, svg:hover circle{
+    transition: all ease 0.4s;
+}
+
+footer a  svg:hover path, svg:hover circle{
+    fill: var(--primary-magenta-color);
+}
+
+@media screen and (min-width: 990px) {
+        
     .container{
         display: grid;
         grid-template-columns: 50% 50%;
+        padding: 3.2rem 3.2rem 1 3.2rem;
+        background-image: url(../images/bg-desktop.svg);
+        background-size: cover;
     }
 
     header{
@@ -108,28 +128,32 @@ footer a:hover{
         grid-column-end: 3 ;
     }
 
-    .container :nth-child(3) * {
-        border: solid 1px rgb(21, 34, 22) ;
+    .container .content  {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 3.2rem 0 3.2rem 2.2rem;
+        height: fit-content;
+    }
+
+    .title {
+        font-size: 2.5rem;
         text-align: left;
     }
-
-    .container :nth-child(3) {
-        padding: 3.2rem 0;
+    
+    .text {
+        font-size: 0.8rem;
+        text-align: left;
     }
-
+    
 
     .container .btn{
         text-align: center;
+        padding: 12px 0;
     }
 
     footer{
-        /* grid-area: social; */
         grid-column-start: 1;
-        grid-column-end: 3 ;
-        text-align: right;
-        border: solid 1px rgb(189, 108, 4) ;
-
-    }
-
-    
+        grid-column-end: 3;
+        justify-content: right;
+    }    
 }
